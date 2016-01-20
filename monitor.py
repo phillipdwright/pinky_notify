@@ -19,10 +19,9 @@ if todays_status == 'tick-circle.png':
 # 
 if fixed:
     # Add the project path to the directory
-    import sys
-    newpath = r'C:\Users\phiwri\AppData\Local\Programs\Python'
-    newpath += r'\Python35-32\Lib\site-packages\pinky_notify'
-    sys.path.append(newpath)
+    import os, sys
+    projectpath = os.path.dirname(__file__)
+    sys.path.append(projectpath)
     
     # Check to see if it's already done
     from already_done import already_done
@@ -32,6 +31,7 @@ if fixed:
         import send_pinky_email
         
         # Change the already_done variable
-        with open(newpath + r'\already_done.py', 'w') as file:
+        filename = os.path.join(projectpath + 'already_done.py')
+        with open(filename, 'w') as file:
             file.write('already_done = True')
 
