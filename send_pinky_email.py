@@ -7,7 +7,7 @@
 from smtplib import SMTP
 
 GMAIL_USERNAME = 'philspythonsenderbot@gmail.com'
-GMAIL_PASSWORD = 'sehrgeil'
+GMAIL_PASSWORD = '********'
 
 # Build the email
 email_subject = '\\\\pinky is back up!'
