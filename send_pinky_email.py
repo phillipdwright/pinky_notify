@@ -15,32 +15,24 @@ GMAIL_PASSWORD = gmail.password
 
 # Build the email
 email_subject = '\\\\pinky is back up!'
-# recipients = ['pwright@medeco.com', 'wright.phillip@gmail.com']
-recipients = ['pwright@medeco.com',
-				'trippe@medeco.com',
-				'cgrant@medeco.com',
-				'chenson@medeco.com',
-				'rconner@medeco.com',
-				'dakers@medeco.com',
-				'bbrummette@medeco.com'
-				]
+recipients = gmail.recipients
 headers = '\r\n'.join(['from: Phil Wright <' + GMAIL_USERNAME + '>',
                         'subject: ' + email_subject,
                         'to: ' + recipients[0],
                         'mime-version: 1.0',
                         'content-type: text/html'])
 body_of_email = """
-					<html>
-					Folks,<br><br>
-					The PINKY server has been restored to service, 
-					and you should be able to create APS and key 
-					cutting files on it now as needed.  Please 
-					contact me if you continue to experience issues 
-					with this process.<br><br>
-					Thanks!<br><br>
-					Phil
-					</html>
-					"""
+                    <html>
+                    Folks,<br><br>
+                    The PINKY server has been restored to service, 
+                    and you should be able to create APS and key 
+                    cutting files on it now as needed.  Please 
+                    contact me if you continue to experience issues 
+                    with this process.<br><br>
+                    Thanks!<br><br>
+                    Phil
+                    </html>
+                    """
 content = headers + "\r\n\r\n" + body_of_email
 
 # Create session
@@ -58,4 +50,4 @@ with SMTP('smtp.gmail.com', 25) as session:
     # Send the email!
     session.sendmail(GMAIL_USERNAME, recipients, content)
 
-	
+    
