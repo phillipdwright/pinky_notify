@@ -31,7 +31,7 @@ if fixed:
         import send_pinky_email
         
         # Change the already_done variable
-        filename = os.path.join(projectpath + 'already_done.py')
+        filename = os.path.join(projectpath, 'already_done.py')
         with open(filename, 'w') as file:
             file.write('already_done = True')
 
