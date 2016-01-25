@@ -5,9 +5,13 @@
 #  https://support.google.com/a/answer/176600?hl=en
 
 from smtplib import SMTP
+import os, sys
+projectpath = os.path.dirname(__file__)
+sys.path.append(projectpath)
+import gmail
 
-GMAIL_USERNAME = 'philspythonsenderbot@gmail.com'
-GMAIL_PASSWORD = '********'
+GMAIL_USERNAME = gmail.username
+GMAIL_PASSWORD = gmail.password
 
 # Build the email
 email_subject = '\\\\pinky is back up!'
